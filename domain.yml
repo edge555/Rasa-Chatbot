@@ -9,14 +9,6 @@ intents:
 - mood_great
 - mood_unhappy
 - bot_challenge
-- tell_name
-- my_name
-- mobile_number
-  
-entities:
-- name
-- number
-
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -31,11 +23,3 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
-  utter_name:
-  - text: My name is ReportBot.
-  utter_my_name:
-  - text: What is your name?
-  utter_mobile_number:
-  - text: What is your mobile number?
-  utter_thanks:
-  - text: Thanks for info.
