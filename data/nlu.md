@@ -49,6 +49,11 @@
 - extremely sad
 - so sad
 
+## intent:tell_name
+- what is your name?
+- what should I call you?
+- what others call you?
+
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?

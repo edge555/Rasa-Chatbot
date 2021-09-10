@@ -29,3 +29,9 @@
 ## bot challenge
 * bot_challenge
   - utter_iamabot
+
+## happy name path
+* greet
+  - utter_greet
+* tell_name
+  - utter_name
