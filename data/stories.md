@@ -35,3 +35,11 @@
   - utter_greet
 * tell_name
   - utter_name
+  - utter_my_name
+* my_name
+  - utter_mobile_number
+* mobile_number
+  - utter_thanks
+
+
+  

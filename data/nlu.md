@@ -54,6 +54,16 @@
 - what should I call you?
 - what others call you?
 
+## intent:my_name
+- My name is [Shoaib]{"entity":"name","value":"Shoaib"}
+- [Shoaib]{"entity":"name","value":"Shoaib"} is my name
+- people call me [Shoaib]{"entity":"name","value":"Shoaib"}
+
+## intent:mobile_number
+- My number is [123]{"entity":"number"}
+- [123]{"entity":"number"} is my number
+- My number is [123]{"entity":"number"}
+
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
