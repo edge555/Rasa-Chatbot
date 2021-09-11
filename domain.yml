@@ -2,13 +2,25 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- goodbye
-- affirm
-- deny
-- mood_great
-- mood_unhappy
-- bot_challenge
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - tell_name
+  - my_name:
+      use_entities:
+        - name
+  - mobile_number:
+      use_entities:
+        - number
+
+entities:
+  - name
+  - number
+
 responses:
   utter_greet:
   - text: Hey! How are you?
@@ -23,3 +35,11 @@ responses:
   - text: Bye
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_name:
+  - text: My name is ReportByte
+  utter_my_name:
+  - text: What is your name?
+  utter_mobile_number:
+  - text: What is your number?
+  utter_thanks:
+  - text: Thanks for the info

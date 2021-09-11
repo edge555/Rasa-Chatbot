@@ -90,3 +90,19 @@ nlu:
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
+
+- intent: tell_name
+  examples: |
+    - what is your name?
+    - what should I call you?
+    - what others call you?
+
+- intent: my_name
+  examples: |
+    - my name is [shoaib]{"entity":"name"}
+    - [samir]{"entity":"name"} is my name
+
+- intent: mobile_number
+  examples: |
+    - my number is [123]{"entity":"number"}
+    - [321]{"entity":"number"} is my number   
