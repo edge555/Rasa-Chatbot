@@ -1,6 +1,5 @@
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+version: "2.0"
+ 
 intents:
   - greet
   - goodbye
@@ -16,10 +15,16 @@ intents:
   - mobile_number:
       use_entities:
         - number
-
+        
 entities:
   - name
   - number
+
+slots:
+  name:
+    type: text
+  number:
+    type: text
 
 responses:
   utter_greet:
@@ -37,9 +42,21 @@ responses:
   - text: I am a bot, powered by Rasa.
   utter_name:
   - text: My name is ReportByte
-  utter_my_name:
+  utter_ask_name:
   - text: What is your name?
-  utter_mobile_number:
+  utter_ask_number:
   - text: What is your number?
-  utter_thanks:
-  - text: Thanks for the info
+  utter_details_thanks:
+  - text: "Thanks for the info. \nName: {Name}, \nMobile Number: {Mobile_number}"
+
+actions:
+  - action_submit
+
+forms:
+  user_details_form:
+    name:
+      - type: from_entity
+        entity: name
+    number:
+      - type: from_entity
+        entity: number

@@ -29,16 +29,20 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-- story: happy name path
-  steps:
-  - intent: tell_name
-  - action: utter_name
-  - action: utter_my_name
-  - intent: my_name
-    entities:
-    - name: "shoaib"
-  - action: utter_mobile_number
-  - intent: mobile_number
-    entities:
-    - number: "123"
-  - action: utter_thanks
+# - story: happy name path
+#   steps:
+#   - intent: tell_name
+#   - action: utter_name
+#   - action: utter_my_name
+#   - intent: my_name
+#     entities:
+#     - name: "shoaib"
+#   - slot_was_set:
+#     - name: "shoaib"
+#   - action: utter_mobile_number
+#   - intent: mobile_number
+#     entities:
+#     - number: "123"
+#   - slot_was_set:
+#     - number: "123"
+#   - action: utter_thanks
