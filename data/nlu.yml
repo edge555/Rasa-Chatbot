@@ -105,4 +105,17 @@ nlu:
 - intent: mobile_number
   examples: |
     - my number is [123]{"entity":"number"}
-    - [321]{"entity":"number"} is my number   
+    - [321]{"entity":"number"} is my number
+
+- intent: play_video
+  examples: |
+    - play the mentioned video
+    - open the url
+    - open the link in browser
+    - show me the video that i asked for
+
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?

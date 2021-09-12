@@ -33,16 +33,20 @@ stories:
 #   steps:
 #   - intent: tell_name
 #   - action: utter_name
-#   - action: utter_my_name
+#   - action: utter_ask_name
 #   - intent: my_name
 #     entities:
 #     - name: "shoaib"
 #   - slot_was_set:
 #     - name: "shoaib"
-#   - action: utter_mobile_number
+#   - action: utter_ask_number
 #   - intent: mobile_number
 #     entities:
 #     - number: "123"
 #   - slot_was_set:
 #     - number: "123"
-#   - action: utter_thanks
+
+- story: happy play video path
+  steps:
+    - intent: play_video
+    - action: action_video

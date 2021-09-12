@@ -9,6 +9,7 @@ intents:
   - mood_unhappy
   - bot_challenge
   - tell_name
+  - play_video
   - my_name:
       use_entities:
         - name
@@ -51,6 +52,7 @@ responses:
 
 actions:
   - action_submit
+  - action_video
 
 forms:
   user_details_form:
