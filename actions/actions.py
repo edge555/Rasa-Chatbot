@@ -4,6 +4,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.executor import CollectingDispatcher
 import webbrowser
+import sqlite3
 
 class ActionVideo(Action):
     def name(self) -> Text:
@@ -78,5 +79,14 @@ class ActionProductSubmit(Action):
         tracker: Tracker,
         domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
-        dispatcher.utter_message(template="utter_product_thanks",
-                                 Product_Name=tracker.get_slot("product_name"))
+        
+        productname = tracker.get_slot("product_name")
+        conn = sqlite3.connect('test.db')
+        c = conn.cursor()
+        q = "SELECT * FROM PRODUCTS WHERE pname = '"+productname+"'"
+        rows = c.execute(q).fetchall()
+        if len(rows) == 0:
+            dispatcher.utter_message("Sorry this product is not available")
+        else:
+            dispatcher.utter_message(template="utter_product_thanks",
+                                     Product_Name=tracker.get_slot("product_name"))

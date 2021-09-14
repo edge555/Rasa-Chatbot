@@ -126,6 +126,7 @@ nlu:
   examples: |
     - I want [mobile]{"entity":"product_name"}
     - I need [laptop]{"entity":"product_name"}
+    - I will take [pc]{"entity":"product_name"}
 
 - intent: out_of_scope
   examples: |
