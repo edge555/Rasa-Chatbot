@@ -51,32 +51,32 @@ class ActionSubmit(Action):
                                  Name=tracker.get_slot("name"),
                                  Mobile_number=tracker.get_slot("number"))
 
-# class ValidateProductForm(Action):
-#     def name(self) -> Text:
-#         return "product_details_form"
+class ValidateProductForm(Action):
+    def name(self) -> Text:
+        return "product_details_form"
 
-#     def run(
-#         self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
-#     ) -> List[EventType]:
-#         required_slots = ["product_name"]
+    def run(
+        self, dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict
+    ) -> List[EventType]:
+        required_slots = ["product_name"]
 
-#         for slot_name in required_slots:
-#             if tracker.slots.get(slot_name) is None:
-#                 # The slot is not filled yet. Request the user to fill this slot next.
-#                 return [SlotSet("requested_slot", slot_name)]
+        for slot_name in required_slots:
+            if tracker.slots.get(slot_name) is None:
+                # The slot is not filled yet. Request the user to fill this slot next.
+                return [SlotSet("requested_slot", slot_name)]
 
-#         # All slots are filled.
-#         return [SlotSet("requested_slot", None)]
+        # All slots are filled.
+        return [SlotSet("requested_slot", None)]
     
-# class ActionProductSubmit(Action):
-#     def name(self) -> Text:
-#         return "action_product_submit"
+class ActionProductSubmit(Action):
+    def name(self) -> Text:
+        return "action_product_submit"
 
-#     def run(
-#         self,
-#         dispatcher,
-#         tracker: Tracker,
-#         domain: "DomainDict",
-#     ) -> List[Dict[Text, Any]]:
-#         dispatcher.utter_message(template="utter_product_thanks",
-#                                  Product_Name=tracker.get_slot("product_name"))
+    def run(
+        self,
+        dispatcher,
+        tracker: Tracker,
+        domain: "DomainDict",
+    ) -> List[Dict[Text, Any]]:
+        dispatcher.utter_message(template="utter_product_thanks",
+                                 Product_Name=tracker.get_slot("product_name"))

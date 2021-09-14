@@ -32,22 +32,21 @@ rules:
   # The actions we want to run when the form is submitted.
   - action: action_submit
 
-# - rule: Activate buy form
-#   steps:
-#   - intent: buy_product
-#   - action: utter_ask_product_name
-#   - action: product_details_form
-#   - active_loop: product_details_form
+- rule: Activate buy form
+  steps:
+  - intent: buy_product
+  - action: product_details_form
+  - active_loop: product_details_form
 
-# - rule: Submit buy product form
-#   condition:
-#   # Condition that form is active.
-#   - active_loop: product_details_form
-#   steps:
-#   # Form is deactivated
-#   - action: product_details_form
-#   - active_loop: null
-#   - slot_was_set:
-#     - requested_slot: null
-#   # The actions we want to run when the form is submitted.
-#   - action: action_buy_product
+- rule: Submit buy product form
+  condition:
+  # Condition that form is active.
+  - active_loop: product_details_form
+  steps:
+  # Form is deactivated
+  - action: product_details_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  # The actions we want to run when the form is submitted.
+  - action: action_product_submit
