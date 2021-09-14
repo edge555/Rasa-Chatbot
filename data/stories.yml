@@ -29,22 +29,15 @@ stories:
   - intent: deny
   - action: utter_goodbye
 
-# - story: happy name path
-#   steps:
-#   - intent: tell_name
-#   - action: utter_name
-#   - action: utter_ask_name
-#   - intent: my_name
-#     entities:
-#     - name: "shoaib"
-#   - slot_was_set:
-#     - name: "shoaib"
-#   - action: utter_ask_number
-#   - intent: mobile_number
-#     entities:
-#     - number: "123"
-#   - slot_was_set:
-#     - number: "123"
+- story: happy product buy
+  steps:
+    - intent: buy_product
+    - action: utter_ask_product_name
+    - intent: say_product_name
+      entities:
+      - product_name: "mobile"
+    - slot_was_set:
+      - product_name: "mobile"
 
 - story: happy play video path
   steps:

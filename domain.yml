@@ -10,21 +10,29 @@ intents:
   - bot_challenge
   - tell_name
   - play_video
+  - buy_product
+  - say_product_name
   - my_name:
       use_entities:
         - name
   - mobile_number:
       use_entities:
         - number
+  - product_name:
+      use_entities:
+        - product_name
         
 entities:
   - name
   - number
+  - product_name
 
 slots:
   name:
     type: text
   number:
+    type: text
+  product_name:
     type: text
 
 responses:
@@ -47,12 +55,18 @@ responses:
   - text: What is your name?
   utter_ask_number:
   - text: What is your number?
+  utter_ask_product_name:
+  - text: What is the name of the product?
+  - text: What do you want to buy?
+  utter_product_thanks:
+  - text: "Thanks for your order of \nProduct: {Product_Name}"
   utter_details_thanks:
   - text: "Thanks for the info. \nName: {Name}, \nMobile Number: {Mobile_number}"
 
 actions:
   - action_submit
   - action_video
+  # - action_product_submit
 
 forms:
   user_details_form:
@@ -62,3 +76,8 @@ forms:
     number:
       - type: from_entity
         entity: number
+
+  # product_details_form:
+  #   name:
+  #     - type: from_entity
+  #       entity: product_name

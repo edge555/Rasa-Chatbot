@@ -114,6 +114,19 @@ nlu:
     - open the link in browser
     - show me the video that i asked for
 
+- intent: buy_product
+  examples: |
+    - I want to buy
+    - I want to buy something
+    - I need to buy 
+    - I need to buy something
+    - I need something
+    
+- intent: say_product_name
+  examples: |
+    - I want [mobile]{"entity":"product_name"}
+    - I need [laptop]{"entity":"product_name"}
+
 - intent: out_of_scope
   examples: |
     - I want to order food
